@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1558557932 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\main.cpp
+	<iostream>
+	<SFML/Graphics.hpp>
+	<Board.h>
+	<GameController.h>
+
+1558558877 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\board.cpp
+	"Board.h"
+
+1558558851 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\board.h
+	<SFML/Graphics.hpp>
+
+1558557759 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\gamecontroller.cpp
+	"GameController.h"
+
+1558557759 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\gamecontroller.h
+	<Board.h>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<sstream>
+
