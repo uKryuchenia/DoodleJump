@@ -2,6 +2,7 @@
 #define GAMECONTROLLER_H
 
 #include <Board.h>
+#include <Doodler.h>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
@@ -9,7 +10,8 @@
 
 class GameController
 {
-    Board & b;
+    Board & board;
+    Doodler & doodler;
 
     int score=0;
     sf::Font font;
@@ -17,11 +19,11 @@ class GameController
 
 
 public:
-    GameController(Board & board);
+    GameController(Board & b, Doodler &d);
     std::string intToString(int x);
     void setScore();
 
-
+    void handleEvent(sf::Event &event);
     void draw(sf::RenderWindow &window);
 
 };

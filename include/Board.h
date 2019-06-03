@@ -11,8 +11,8 @@ struct Platforms
 
 class Board
 {
-    sf::Texture Texture1,Texture2,Texture3,Texture4;
-    sf::Sprite backgroung, slab, doodlerLeft, doodlerRight;
+    sf::Texture Texture1,Texture2;
+    sf::Sprite backgroung, slab;
 
     Platforms plat[10];
 
@@ -21,6 +21,12 @@ class Board
 public:
 
     Board();
+    void motion(int x);
+
+    int platformsX(int x);
+    int platformsY(int y);
+
+
     void draw(sf::RenderWindow &window);
 
 };

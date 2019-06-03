@@ -1,6 +1,6 @@
 #include "GameController.h"
 
-GameController::GameController(Board & board) : b(board)
+GameController::GameController(Board & b, Doodler &d) : board(b), doodler(d)
 {
 
     if (!font.loadFromFile("amatic-bold.ttf"))
@@ -36,7 +36,14 @@ void GameController::setScore()
     text1.setString(intToString(score));
 }
 
-void GameController::draw(sf::RenderWindow &window){
+void GameController::handleEvent(sf::Event &event)
+{
+    doodler.handleEvent(event);
+    score+=10;
+}
+
+void GameController::draw(sf::RenderWindow &window)
+{
     setScore();
     window.draw(text);
     window.draw(text1);
