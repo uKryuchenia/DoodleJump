@@ -3,6 +3,15 @@
 GameController::GameController(Board & b, Doodler &d) : board(b), doodler(d)
 {
 
+    Texture1.loadFromFile("Images/backgroundEnd.jpg");
+    backgroung.setTexture(Texture1);
+    Texture2.loadFromFile("Images/restart.png");
+    restart.setTexture(Texture2);
+    restart.setPosition(230,600);
+    Texture3.loadFromFile("Images/exit.png");
+    exit.setTexture(Texture3);
+    exit.setPosition(230,750);
+
     if (!font.loadFromFile("amatic-bold.ttf"))
     {
         std::cout<<"error"<<std::endl;
@@ -20,32 +29,57 @@ GameController::GameController(Board & b, Doodler &d) : board(b), doodler(d)
     text1.setCharacterSize(55);
     text1.setColor(sf::Color::Black);
 
+    text2.setFont(font);
+    text2.setString(" Game Over " );
+    text2.setPosition(30,300);
+    text2.setCharacterSize(195);
+    text2.setColor(sf::Color::Black);
 
 }
 
-std::string GameController::intToString(int x)
+void GameController::motion()
 {
-    std::stringstream ss;
-    ss << x << std::endl;
-    std::string newString = ss.str();
-    return newString;
+    if(doodler.gameOveR()==false)
+        doodler.motion();
 }
-
-void GameController::setScore()
-{
-    text1.setString(intToString(score));
-}
-
 void GameController::handleEvent(sf::Event &event)
 {
+    int x=0,y=0;
+    if (event.type == sf::Event::MouseButtonPressed)
+    {
+        if (event.mouseButton.button == sf::Mouse::Left)
+        {
+            x=event.mouseButton.x;
+            y=event.mouseButton.y;
+        }
+    }
+
+    if(x<400 and x>230 and y>600 and y<660)
+    {
+       doodler.restart();
+       board.restart();
+    }
+    if(x<400 and x>230 and y>750 and y<810)  ex=1;
+
+
     doodler.handleEvent(event);
-    score+=10;
 }
 
 void GameController::draw(sf::RenderWindow &window)
 {
-    setScore();
-    window.draw(text);
-    window.draw(text1);
+    if(doodler.gameOveR()==false){
+    board.draw(window);
+    doodler.draw(window);
+    } else{
+        text1.setString(doodler.score());
+        window.draw(backgroung);
+        window.draw(text);
+        window.draw(text1);
+        window.draw(text2);
+        window.draw(restart);
+        window.draw(exit);
+    }
+    if(ex) window.close();
+
 
 }

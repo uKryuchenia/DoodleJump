@@ -18,12 +18,12 @@ int main()
 
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(603, 1072), "Doodle Jump");
-    window.setFramerateLimit(30);
+    window.setFramerateLimit(60);
 
     // Start the game loop
     while (window.isOpen())
     {
-        d.motion();
+        gc.motion();
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -36,8 +36,6 @@ int main()
         // Clear screen
         window.clear();
 
-        b.draw(window);
-        d.draw(window);
         gc.draw(window);
 
         // Update the window

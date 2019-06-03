@@ -13,7 +13,7 @@ class Board
 {
     sf::Texture Texture1,Texture2;
     sf::Sprite backgroung, slab;
-
+    int amountPlat=10;
     Platforms plat[10];
 
 
@@ -25,8 +25,9 @@ public:
 
     int platformsX(int x);
     int platformsY(int y);
-
-
+    int setAmountPlat(int x);//
+    int getAmountPlat();//
+    void restart();
     void draw(sf::RenderWindow &window);
 
 };

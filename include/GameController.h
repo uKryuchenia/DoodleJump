@@ -3,26 +3,22 @@
 
 #include <Board.h>
 #include <Doodler.h>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <iostream>
-#include <sstream>
 
 class GameController
 {
     Board & board;
     Doodler & doodler;
-
-    int score=0;
+    sf::Texture Texture1,Texture2,Texture3;
+    sf::Sprite backgroung,restart,exit;
     sf::Font font;
-    sf::Text text,text1;
+    sf::Text text,text1,text2;
 
+    int ex=0; //zamkniecie okna
 
 public:
-    GameController(Board & b, Doodler &d);
-    std::string intToString(int x);
-    void setScore();
 
+    GameController(Board & b, Doodler &d);
+    void motion();
     void handleEvent(sf::Event &event);
     void draw(sf::RenderWindow &window);
 
