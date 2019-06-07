@@ -54,23 +54,26 @@ void GameController::handleEvent(sf::Event &event)
         }
     }
 
-    if(x<400 and x>230 and y>600 and y<660)
+    if(x<400 and x>230 and y>600 and y<660) //przycisk restart
     {
-       doodler.restart();
-       board.restart();
+        doodler.restart();
+        board.restart();
     }
-    if(x<400 and x>230 and y>750 and y<810)  ex=1;
-
+    if(x<400 and x>230 and y>750 and y<810)
+        ex=1; //przycisk koniec
 
     doodler.handleEvent(event);
 }
 
 void GameController::draw(sf::RenderWindow &window)
 {
-    if(doodler.gameOveR()==false){
-    board.draw(window);
-    doodler.draw(window);
-    } else{
+    if(doodler.gameOveR()==false)
+    {
+        board.draw(window);
+        doodler.draw(window);
+    }
+    else
+    {
         text1.setString(doodler.score());
         window.draw(backgroung);
         window.draw(text);
@@ -79,7 +82,8 @@ void GameController::draw(sf::RenderWindow &window)
         window.draw(restart);
         window.draw(exit);
     }
-    if(ex) window.close();
+    if(ex)
+        window.close();
 
 
 }

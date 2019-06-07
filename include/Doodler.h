@@ -6,16 +6,19 @@
 #include <iostream>
 #include <sstream>
 #include <Board.h>
+#include <Monster.h>
 
 enum Direction  {Left, Right};
-enum VerticalDirection  {Up, Down};
+enum VerticalDirection  {Up,Down};
 
 class Doodler
 {
     Board & board;
+    Monster & monst;
     Direction dir=Left;
     VerticalDirection dirV=Down;
     const int minY=400;
+    int setMonster=100;
     int jump=1000;
     int x=300,y=400;
     int y0=0;
@@ -29,10 +32,11 @@ class Doodler
     sf::Sprite doodlerLeft, doodlerRight;
 
 public:
-    Doodler(Board &b);
+    Doodler(Board &b,Monster &m);
 
     void motion();
     void reactionJumpOnPlatforms();
+    void reactionTouchMonster();
     void setScore();
     std::string intToString(int x);
     void handleEvent(sf::Event &event);

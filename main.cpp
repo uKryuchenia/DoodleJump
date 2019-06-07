@@ -4,6 +4,7 @@
 #include <Board.h>
 #include <Doodler.h>
 #include <GameController.h>
+#include <Monster.h>
 
 
 using namespace std;
@@ -13,7 +14,8 @@ int main()
     srand (time(NULL));
 
     Board b;
-    Doodler d(b);
+    Monster m;
+    Doodler d(b,m);
     GameController gc(b,d);
 
     // Create the main window

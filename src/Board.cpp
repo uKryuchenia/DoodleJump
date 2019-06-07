@@ -21,7 +21,8 @@ void Board::motion(int x)
     for(int i=0; i<amountPlat; i++)
     {
         plat[i].y+=x;
-        if(plat[i].y>1072){
+        if(plat[i].y>1072)
+        {
             plat[i].x=rand() % 503;
             plat[i].y=100;
         }
@@ -38,7 +39,8 @@ void Board::restart()
     }
 }
 
-void Board::draw(sf::RenderWindow &window){
+void Board::draw(sf::RenderWindow &window)
+{
 
     window.draw(backgroung);
 
