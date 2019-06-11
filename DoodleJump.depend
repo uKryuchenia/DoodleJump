@@ -1,39 +1,50 @@
 # depslib dependency file v1.0
-1559652274 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\main.cpp
+1560259708 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<Board.h>
 	<Doodler.h>
 	<GameController.h>
 	<Monster.h>
+	<CompressionSpring.h>
 
-1559907077 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\board.cpp
+1560259679 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\board.cpp
 	"Board.h"
 
-1559602004 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\board.h
+1560257005 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\board.h
 	<SFML/Graphics.hpp>
 
-1559907077 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\gamecontroller.cpp
+1560258884 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\gamecontroller.cpp
 	"GameController.h"
 
-1559600562 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\gamecontroller.h
+1560260277 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\gamecontroller.h
 	<Board.h>
 	<Doodler.h>
 
-1559906652 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\doodler.h
+1560184515 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\doodler.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<iostream>
 	<sstream>
 	<Board.h>
 	<Monster.h>
+	<CompressionSpring.h>
 
-1559906610 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\doodler.cpp
+1560259708 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\doodler.cpp
 	"Doodler.h"
 
-1559654718 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\monster.h
+1560106936 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\monster.h
 	<SFML/Graphics.hpp>
 
-1559906996 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\monster.cpp
+1560105599 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\monster.cpp
 	"Monster.h"
+
+1560260277 c:\1\Ó÷¸áà\2 ñåì\doodlejump\include\compressionspring.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<Board.h>
+	<iostream>
+
+1560257423 source:c:\1\Ó÷¸áà\2 ñåì\doodlejump\src\compressionspring.cpp
+	"CompressionSpring.h"
 

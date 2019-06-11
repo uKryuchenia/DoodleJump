@@ -1,6 +1,6 @@
 #include "GameController.h"
 
-GameController::GameController(Board & b, Doodler &d) : board(b), doodler(d)
+GameController::GameController(Board & b, Doodler &d, CompressionSpring & s) : board(b), doodler(d),spring(s)
 {
 
     Texture1.loadFromFile("Images/backgroundEnd.jpg");
@@ -34,13 +34,29 @@ GameController::GameController(Board & b, Doodler &d) : board(b), doodler(d)
     text2.setPosition(30,300);
     text2.setCharacterSize(195);
     text2.setColor(sf::Color::Black);
+}
 
+void GameController::newSpring()
+{
+    int scoreForSpring=2000+rand()%1300;//pojawianie sie sprezyny w roznych czasach
+
+    if(doodler.getScore()>scoreForSpring*s1) s=1;
+
+    if(s)
+    {
+        spring.newSpring();
+        s=0;
+        s1++;
+    }
 }
 
 void GameController::motion()
 {
-    if(doodler.gameOveR()==false)
+    if(doodler.gameOveR()==false){
         doodler.motion();
+        newSpring();
+    }
+
 }
 void GameController::handleEvent(sf::Event &event)
 {
@@ -58,6 +74,8 @@ void GameController::handleEvent(sf::Event &event)
     {
         doodler.restart();
         board.restart();
+        spring.restart();
+        s1=1;
     }
     if(x<400 and x>230 and y>750 and y<810)
         ex=1; //przycisk koniec
@@ -70,6 +88,7 @@ void GameController::draw(sf::RenderWindow &window)
     if(doodler.gameOveR()==false)
     {
         board.draw(window);
+        spring.draw(window);
         doodler.draw(window);
     }
     else
@@ -84,6 +103,5 @@ void GameController::draw(sf::RenderWindow &window)
     }
     if(ex)
         window.close();
-
-
 }
+

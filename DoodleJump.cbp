@@ -35,11 +35,13 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Board.h" />
+		<Unit filename="include/CompressionSpring.h" />
 		<Unit filename="include/Doodler.h" />
 		<Unit filename="include/GameController.h" />
 		<Unit filename="include/Monster.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Board.cpp" />
+		<Unit filename="src/CompressionSpring.cpp" />
 		<Unit filename="src/Doodler.cpp" />
 		<Unit filename="src/GameController.cpp" />
 		<Unit filename="src/Monster.cpp" />

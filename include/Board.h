@@ -15,7 +15,7 @@ class Board
     sf::Sprite backgroung, slab;
     int amountPlat=10;
     Platforms plat[10];
-
+    int resetPlat=0;
 
 
 public:
@@ -26,6 +26,7 @@ public:
     int platformsX(int x);
     int platformsY(int y);
     int setAmountPlat(int x);//
+    int getResetPlat();
     int getAmountPlat();//
     void restart();
     void draw(sf::RenderWindow &window);

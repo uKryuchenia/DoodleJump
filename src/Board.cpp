@@ -8,7 +8,10 @@ Board::Board()
     Texture2.loadFromFile("Images/plyta.png");
     slab.setTexture(Texture2);
 
-    for(int i=0,j=80; i<amountPlat; i++,j+=85)
+    plat[0].x=300;
+    plat[0].y=800+(rand() % 30);
+
+    for(int i=1,j=80; i<amountPlat; i++,j+=85)
     {
         plat[i].x=rand() % 503;
         plat[i].y=j+(rand() % 30);
@@ -25,14 +28,17 @@ void Board::motion(int x)
         {
             plat[i].x=rand() % 503;
             plat[i].y=100;
+            resetPlat=i;
         }
     }
-
 }
 
 void Board::restart()
 {
-    for(int i=0,j=80; i<amountPlat; i++,j+=85)
+    plat[0].x=300;
+    plat[0].y=900+(rand() % 30);
+
+    for(int i=1,j=80; i<amountPlat; i++,j+=85)
     {
         plat[i].x=rand() % 503;
         plat[i].y=j+(rand() % 30);
@@ -41,7 +47,6 @@ void Board::restart()
 
 void Board::draw(sf::RenderWindow &window)
 {
-
     window.draw(backgroung);
 
     for(int i=0; i<amountPlat; i++)
@@ -49,12 +54,16 @@ void Board::draw(sf::RenderWindow &window)
         slab.setPosition(plat[i].x,plat[i].y);
         window.draw(slab);
     }
-
 }
 
 int Board::setAmountPlat(int x)
 {
     amountPlat=x;
+}
+
+int Board::getResetPlat()
+{
+    return resetPlat;
 }
 
 int Board::getAmountPlat()
